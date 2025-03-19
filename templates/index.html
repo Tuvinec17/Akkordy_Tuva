@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список песен</title>
+</head>
+<body>
+    <h1>Список песен</h1>
+    <ul>
+        {% for song in songs %}
+            <li><a href="{{ url_for('song', song_id=song.id) }}">{{ song.title }} - {{ song.artist }}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('admin') }}">Добавить песню</a>
+</body>
+</html>
