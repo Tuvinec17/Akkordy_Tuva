@@ -72,5 +72,6 @@ def admin():
 
 create_table()
 
-if __name__ == "__main__":
-    app.run(debug=True)
+if name == "__main__":
+    port = int(os.environ.get("PORT", 5000))  # Берём порт из окружения (Render его подставит)
+    app.run(host="0.0.0.0", port=port)  # Открываем доступ извне
